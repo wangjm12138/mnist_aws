@@ -1,0 +1,12 @@
+FROM docker.io/fdfafdasfdafasfas/modelmaker_tensorflow:0.2.0
+
+COPY ./wang_aws.py /home/
+COPY ./my_minist.py /home/
+COPY ./train-images-idx3-ubyte /home/
+COPY ./train-labels-idx1-ubyte /home/
+COPY ./t10k-images-idx3-ubyte /home/
+COPY ./t10k-labels-idx1-ubyte /home/
+COPY ./start_aws.sh /bin/
+
+ENTRYPOINT ["/bin/start_aws.sh"]
+# docker build -t s1_ws_tensorflow:mnist -f Dockerfile_ws . 
